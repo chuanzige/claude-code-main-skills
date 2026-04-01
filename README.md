@@ -49,6 +49,64 @@ cp -R adversarial-verification coordinator-orchestrator lightweight-explorer mem
 
 Restart Codex after installation so the new skills are reloaded.
 
+## Import Into Claude Code, OpenCode, And Other AI Coding Tools
+
+These skills are authored in Codex/Claude-style `SKILL.md` format. Some tools support this structure directly, while others require adapting the content into their own command or rules system.
+
+| Tool | Native import path | Recommended way to use this repo |
+| --- | --- | --- |
+| Claude Code | `.claude/skills/` or `~/.claude/skills/` | Copy each skill folder as-is. Claude Code supports directory-based skills natively. |
+| Codex | `~/.codex/skills/` | Copy each skill folder as-is. Restart Codex after install. |
+| OpenCode | `.opencode/commands/` or user-level OpenCode commands directory | Convert each `SKILL.md` into a custom command markdown file. OpenCode supports commands natively, not Claude-style skill folders. |
+| Cursor | `.cursor/rules/` or root `AGENTS.md` | Adapt a skill into one or more Cursor rules, or merge core instructions into `AGENTS.md`. |
+| Windsurf | `.windsurf/rules/` or root `AGENTS.md` | Adapt a skill into Windsurf rules. Root `AGENTS.md` is also a practical compatibility layer. |
+| Cline | `.clinerules/` or `AGENTS.md` | Convert each skill into one or more Cline rule files. Cline also recognizes `AGENTS.md`. |
+
+### Claude Code
+
+Claude Code supports directory-based skills natively. Copy the folders into:
+
+- project scope: `.claude/skills/`
+- user scope: `~/.claude/skills/`
+
+### OpenCode
+
+OpenCode supports custom commands rather than `SKILL.md` skill folders. The practical import workflow is:
+
+1. Create `.opencode/commands/`
+2. Create one markdown command per skill
+3. Copy the important instructions from `SKILL.md` into that command file
+4. Add a short description in frontmatter
+
+This is an adaptation, not a direct drop-in import.
+
+### Cursor
+
+Cursor does not use Claude-style skill folders directly. Recommended options:
+
+- split a skill into one or more files under `.cursor/rules/`
+- or copy the most important instructions into a root `AGENTS.md`
+
+Use rules when you want persistent project behavior rather than explicit invocation.
+
+### Windsurf
+
+Windsurf works best with:
+
+- `.windsurf/rules/*.md`
+- or root `AGENTS.md`
+
+Adapt each skill into a rule file when you want Cascade to apply it as persistent guidance.
+
+### Cline
+
+Cline works best with:
+
+- `.clinerules/*.md`
+- or `AGENTS.md`
+
+If a skill is large, split it into focused rule files instead of pasting everything into one giant file.
+
 ## Skill Summaries
 
 - `coordinator-orchestrator`: Coordinate research, implementation, and verification workers without delegating synthesis.

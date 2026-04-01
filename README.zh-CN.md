@@ -68,6 +68,64 @@ cp -R adversarial-verification coordinator-orchestrator lightweight-explorer mem
 
 安装后请重启 Codex，让它重新加载这些 skill。
 
+## 导入到 Claude Code、OpenCode 以及其他主流 AI Coding 工具
+
+这些 skill 采用的是 Codex / Claude 风格的 `SKILL.md` 目录结构。有些工具可以直接使用这种结构，有些则需要把内容改写成它们自己的 command 或 rules 格式。
+
+| 工具 | 原生导入位置 | 推荐导入方式 |
+| --- | --- | --- |
+| Claude Code | `.claude/skills/` 或 `~/.claude/skills/` | 直接复制整个 skill 目录。Claude Code 原生支持目录式 skills。 |
+| Codex | `~/.codex/skills/` | 直接复制整个 skill 目录，安装后重启 Codex。 |
+| OpenCode | `.opencode/commands/` 或用户级 OpenCode commands 目录 | 将每个 `SKILL.md` 改写为一个自定义 command markdown 文件。OpenCode 原生支持 commands，不是 Claude 风格 skill 目录。 |
+| Cursor | `.cursor/rules/` 或根目录 `AGENTS.md` | 将 skill 改写成一个或多个 Cursor rules，或者提炼核心内容写入 `AGENTS.md`。 |
+| Windsurf | `.windsurf/rules/` 或根目录 `AGENTS.md` | 将 skill 改写为 Windsurf rules，或通过 `AGENTS.md` 兼容导入。 |
+| Cline | `.clinerules/` 或 `AGENTS.md` | 将每个 skill 改写成一个或多个 Cline rule 文件；Cline 也支持 `AGENTS.md`。 |
+
+### Claude Code
+
+Claude Code 原生支持目录式 skill。直接复制到：
+
+- 项目级：`.claude/skills/`
+- 用户级：`~/.claude/skills/`
+
+### OpenCode
+
+OpenCode 原生支持的是 custom commands，而不是 `SKILL.md` 目录。推荐做法：
+
+1. 创建 `.opencode/commands/`
+2. 每个 skill 新建一个对应的 markdown command 文件
+3. 把 `SKILL.md` 中最重要的指令复制进去
+4. 在 frontmatter 中补一个简短描述
+
+所以对于 OpenCode，这属于“改写导入”，不是直接复制即用。
+
+### Cursor
+
+Cursor 不能直接使用 Claude 风格的 skill 目录。推荐两种方式：
+
+- 拆成一个或多个 `.cursor/rules/` 规则文件
+- 或把关键内容提炼到仓库根目录的 `AGENTS.md`
+
+如果你的目标是长期生效的项目约束，优先用 rules。
+
+### Windsurf
+
+Windsurf 更适合使用：
+
+- `.windsurf/rules/*.md`
+- 或根目录 `AGENTS.md`
+
+如果你希望 Cascade 持续套用这些约束，建议把 skill 改写成 rules。
+
+### Cline
+
+Cline 更适合使用：
+
+- `.clinerules/*.md`
+- 或 `AGENTS.md`
+
+如果某个 skill 很长，建议拆成多个规则文件，不要直接把整份内容粗暴塞进一个文件。
+
 ## 使用示例
 
 通过 `$skill-name` 显式调用：
