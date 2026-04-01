@@ -4,6 +4,8 @@ A curated Codex skills pack extracted from the `claude-code-main` source snapsho
 
 This repository packages 11 reusable skills derived from the codebase's coordinator workflow, verification model, memory system, read-only exploration flow, and shell safety rules.
 
+Chinese README: [README.zh-CN.md](./README.zh-CN.md)
+
 ## Highlights
 
 - 11 reusable Codex skills
