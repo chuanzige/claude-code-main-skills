@@ -12,6 +12,7 @@ Chinese README: [README.zh-CN.md](./README.zh-CN.md)
 - grouped into the original 8 plus 3 additional skills discovered from the codebase
 - bilingual repository docs
 - ready to copy into `~/.codex/skills`
+- includes a one-command installer and examples
 
 ## Source
 
@@ -48,6 +49,12 @@ cp -R adversarial-verification coordinator-orchestrator lightweight-explorer mem
 ```
 
 Restart Codex after installation so the new skills are reloaded.
+
+Or use the installer script:
+
+```bash
+./install.sh
+```
 
 ## Import Into Claude Code, OpenCode, And Other AI Coding Tools
 
@@ -128,6 +135,12 @@ Each skill is a standalone folder containing:
 - `SKILL.md`
 - `agents/openai.yaml`
 
+Additional repository assets:
+
+- `LICENSE`
+- `install.sh`
+- `examples/`
+
 ## Installation
 
 Install by copying one or more skill folders into your Codex skills directory:
@@ -156,6 +169,10 @@ Use $worker-prompt-craft to turn this task into a self-contained worker prompt.
 Use $memory-type-system to decide whether this belongs in memory.
 ```
 
+More examples:
+
+- [examples/invocations.md](./examples/invocations.md)
+
 ## Source Basis
 
 These skills were derived from the following subsystems in the source snapshot:
@@ -174,6 +191,12 @@ These skills were derived from the following subsystems in the source snapshot:
 - This repository contains hand-authored skills derived from source behavior, not an official upstream export.
 - The skills are designed for Codex-style `SKILL.md` loading and explicit `$skill-name` invocation.
 - If you want icons, brand colors, or marketplace packaging, add them later in `agents/openai.yaml` and `assets/`.
+
+## License
+
+This repository is distributed under:
+
+- [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)
 
 ## Disclaimer
 

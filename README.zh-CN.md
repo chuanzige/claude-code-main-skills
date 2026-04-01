@@ -4,6 +4,8 @@
 
 这个仓库一共收录了 11 个可复用 skill，主要来源于该代码库中的 coordinator 工作流、验证模型、memory 系统、只读探索流程以及 shell 安全规则。
 
+英文 README：[README.md](./README.md)
+
 ## 来源
 
 源码参考：
@@ -29,6 +31,14 @@
 - `team-memory-routing`
 - `read-only-shell-guard`
 
+## 亮点
+
+- 共 11 个可复用 skills
+- 清晰区分最初的 8 个与新增发现的 3 个
+- 提供中英文说明文档
+- 可直接安装到 `~/.codex/skills`
+- 附带一键安装脚本和示例目录
+
 ## 技能简介
 
 - `coordinator-orchestrator`：协调研究、实现、验证 worker，但不把综合判断外包出去。
@@ -42,13 +52,6 @@
 - `session-memory-maintenance`：在固定模板和 token 预算限制下维护 session notes。
 - `team-memory-routing`：决定 memory 应该写入 private 还是 team 范围。
 - `read-only-shell-guard`：判断一个 shell 命令是否真的只读且可安全放行。
-
-## 仓库结构
-
-每个 skill 都是一个独立目录，包含：
-
-- `SKILL.md`
-- `agents/openai.yaml`
 
 ## 安装方式
 
@@ -67,6 +70,12 @@ cp -R adversarial-verification coordinator-orchestrator lightweight-explorer mem
 ```
 
 安装后请重启 Codex，让它重新加载这些 skill。
+
+也可以直接使用安装脚本：
+
+```bash
+./install.sh
+```
 
 ## 导入到 Claude Code、OpenCode 以及其他主流 AI Coding 工具
 
@@ -126,6 +135,19 @@ Cline 更适合使用：
 
 如果某个 skill 很长，建议拆成多个规则文件，不要直接把整份内容粗暴塞进一个文件。
 
+## 仓库结构
+
+每个 skill 都是一个独立目录，包含：
+
+- `SKILL.md`
+- `agents/openai.yaml`
+
+额外发布资产包括：
+
+- `LICENSE`
+- `install.sh`
+- `examples/`
+
 ## 使用示例
 
 通过 `$skill-name` 显式调用：
@@ -135,6 +157,10 @@ Use $adversarial-verification to verify this change by trying to break it.
 Use $worker-prompt-craft to turn this task into a self-contained worker prompt.
 Use $memory-type-system to decide whether this belongs in memory.
 ```
+
+更多示例：
+
+- [examples/invocations.md](./examples/invocations.md)
 
 ## 源码依据
 
@@ -154,6 +180,12 @@ Use $memory-type-system to decide whether this belongs in memory.
 - 这个仓库不是官方上游直接导出的 skill 包，而是基于源码行为整理出的可发布版本。
 - 这些 skill 面向 Codex 风格的 `SKILL.md` 发现和 `$skill-name` 显式调用。
 - 如果后续你要补图标、品牌色或 marketplace 元数据，可以继续扩展 `agents/openai.yaml` 和 `assets/`。
+
+## 许可
+
+本仓库采用：
+
+- [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)
 
 ## 声明
 
