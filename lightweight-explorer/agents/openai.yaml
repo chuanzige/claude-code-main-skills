@@ -1,0 +1,4 @@
+interface:
+  display_name: "Lightweight Explorer"
+  short_description: "Fast read-only codebase exploration"
+  default_prompt: "Use $lightweight-explorer to find the relevant files and symbols before making any edits."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Adversarial Verification"
+  short_description: "Break changes before you approve them"
+  default_prompt: "Use $adversarial-verification to verify this change by trying to break it, not just confirm it."

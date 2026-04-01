@@ -1,0 +1,4 @@
+interface:
+  display_name: "Session Memory Maintenance"
+  short_description: "Maintain structured session notes"
+  default_prompt: "Use $session-memory-maintenance to update session notes without breaking the template or token budget."

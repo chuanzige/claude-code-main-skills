@@ -1,0 +1,4 @@
+interface:
+  display_name: "Self Rationalization Guard"
+  short_description: "Catch excuses and convert them to action"
+  default_prompt: "Use $self-rationalization-guard when I am explaining instead of executing the next concrete check."

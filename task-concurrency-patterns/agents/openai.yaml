@@ -1,0 +1,4 @@
+interface:
+  display_name: "Task Concurrency Patterns"
+  short_description: "Parallelize safely and serialize writes"
+  default_prompt: "Use $task-concurrency-patterns to split this task into safe parallel research, isolated edits, and independent verification."

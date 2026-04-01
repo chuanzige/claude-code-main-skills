@@ -1,0 +1,4 @@
+interface:
+  display_name: "Worker Prompt Craft"
+  short_description: "Write self-contained worker instructions"
+  default_prompt: "Use $worker-prompt-craft to turn this task into a precise, self-contained worker prompt."

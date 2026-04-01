@@ -1,0 +1,4 @@
+interface:
+  display_name: "Memory Type System"
+  short_description: "Classify what belongs in memory"
+  default_prompt: "Use $memory-type-system to decide whether this should be saved as user, feedback, project, or reference memory."

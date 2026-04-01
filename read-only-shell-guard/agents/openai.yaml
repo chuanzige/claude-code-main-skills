@@ -1,0 +1,4 @@
+interface:
+  display_name: "Read Only Shell Guard"
+  short_description: "Decide if a shell command is truly read-only"
+  default_prompt: "Use $read-only-shell-guard to check whether this shell command should be treated as read-only or escalated."

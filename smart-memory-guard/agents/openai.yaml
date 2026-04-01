@@ -1,0 +1,4 @@
+interface:
+  display_name: "Smart Memory Guard"
+  short_description: "Keep memory accurate, lean, and durable"
+  default_prompt: "Use $smart-memory-guard to decide whether this memory should be verified, condensed, updated, or discarded."

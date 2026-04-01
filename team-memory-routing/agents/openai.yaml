@@ -1,0 +1,4 @@
+interface:
+  display_name: "Team Memory Routing"
+  short_description: "Route memory to private or team scope"
+  default_prompt: "Use $team-memory-routing to decide whether this memory belongs in private scope or shared team memory."

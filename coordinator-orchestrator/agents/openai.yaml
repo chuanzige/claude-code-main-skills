@@ -1,0 +1,4 @@
+interface:
+  display_name: "Coordinator Orchestrator"
+  short_description: "Coordinate workers without lazy delegation"
+  default_prompt: "Use $coordinator-orchestrator to split this work across research, implementation, and verification workers."
