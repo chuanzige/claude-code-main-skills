@@ -4,6 +4,13 @@ A curated Codex skills pack extracted from the `claude-code-main` source snapsho
 
 This repository packages 11 reusable skills derived from the codebase's coordinator workflow, verification model, memory system, read-only exploration flow, and shell safety rules.
 
+## Highlights
+
+- 11 reusable Codex skills
+- grouped into the original 8 plus 3 additional skills discovered from the codebase
+- bilingual repository docs
+- ready to copy into `~/.codex/skills`
+
 ## Source
 
 Source reference:
@@ -28,6 +35,17 @@ Source reference:
 - `session-memory-maintenance`
 - `team-memory-routing`
 - `read-only-shell-guard`
+
+## Quick Install
+
+Install all skills at once:
+
+```bash
+mkdir -p ~/.codex/skills
+cp -R adversarial-verification coordinator-orchestrator lightweight-explorer memory-type-system read-only-shell-guard self-rationalization-guard session-memory-maintenance smart-memory-guard task-concurrency-patterns team-memory-routing worker-prompt-craft ~/.codex/skills/
+```
+
+Restart Codex after installation so the new skills are reloaded.
 
 ## Skill Summaries
 
